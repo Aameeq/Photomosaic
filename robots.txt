@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aameeq.github.io/Photomosaic/sitemap.xml
