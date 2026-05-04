@@ -1,15 +1,15 @@
 :root {
-    --bg-dark: #0a0a0a;
-    --gold: #d4af37;
-    --gold-glow: rgba(212, 175, 55, 0.4);
-    --text-main: #ffffff;
-    --text-dim: #a0a0a0;
-    --hud-bg: rgba(20, 20, 20, 0.7);
-    --border: rgba(255, 255, 255, 0.1);
-    
-    /* Cursor Mask Init */
-    --cursor-x: 50%;
-    --cursor-y: 50%;
+    --bg-dark: #050505;
+    --bg-card: rgba(15, 15, 15, 0.7);
+    --accent: #00f2ff;
+    --accent-secondary: #7000ff;
+    --accent-glow: rgba(0, 242, 255, 0.3);
+    --text-main: #f5f5f5;
+    --text-dim: #888;
+    --border: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
 }
 
 * {
@@ -21,72 +21,53 @@
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     overflow-x: hidden;
-    cursor: none; /* We use a custom cursor */
+    line-height: 1.5;
+    cursor: crosshair;
 }
 
-h1, h2, h3, .eyebrow {
-    font-family: 'Outfit', sans-serif;
+/* --- Typography --- */
+h1, h2, h3, h4, .eyebrow {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
 }
 
+.eyebrow {
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* --- Layout --- */
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 5vw;
 }
 
-/* --- Flashlight Mask --- */
-#flashlight-mask {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    pointer-events: none;
-    background: radial-gradient(
-        circle 250px at var(--cursor-x) var(--cursor-y),
-        transparent 0%,
-        rgba(0, 0, 0, 0.95) 100%
-    );
-    transition: background 0.1s ease-out;
+section {
+    position: relative;
+    padding: 120px 0;
 }
 
-/* --- Technical HUD --- */
-#tech-hud {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    z-index: 1001;
-    background: var(--hud-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--border);
-    padding: 24px;
-    border-radius: 8px;
-    display: flex;
-    gap: 32px;
+/* --- UI Elements --- */
+.glass {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
 }
 
-.hud-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.hud-label {
-    font-size: 10px;
-    color: var(--gold);
-    letter-spacing: 2px;
-    font-weight: 800;
-    margin-bottom: 4px;
-}
-
-.hud-value {
-    font-family: 'Outfit', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
+.gradient-text {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* --- Custom Cursor --- */
@@ -94,221 +75,217 @@ h1, h2, h3, .eyebrow {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2000;
-    pointer-events: none;
-}
-
-.cursor-dot {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: var(--gold);
+    width: 20px;
+    height: 20px;
+    background: var(--accent);
     border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.15s ease-out;
     transform: translate(-50%, -50%);
-}
-
-.cursor-text {
-    position: absolute;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: var(--gold);
-    transform: translate(20px, -50%);
-    opacity: 0;
-    transition: opacity 0.3s;
 }
 
 /* --- Hero Section --- */
 .hero {
     height: 100vh;
-    position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
+    padding: 0;
 }
 
-#tile-cloud {
+.hero-video-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-}
-
-.tile {
-    position: absolute;
-    width: 60px;
-    height: 60px;
     object-fit: cover;
-    border-radius: 4px;
-    opacity: 0.15;
-    filter: grayscale(1) brightness(0.5);
-    transition: filter 0.5s, opacity 0.5s;
-    will-change: transform;
+    opacity: 0.4;
+    filter: brightness(0.7) contrast(1.2);
 }
 
-.tile.active {
-    opacity: 1;
-    filter: grayscale(0) brightness(1.2);
-    z-index: 10;
-}
-
-.hero-inner {
+.hero-content {
     position: relative;
-    z-index: 2;
-}
-
-.hero-text {
-    max-width: 800px;
-}
-
-.eyebrow {
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-weight: 600;
-    font-size: 12px;
-    margin-bottom: 24px;
-    display: block;
+    z-index: 10;
+    text-align: center;
+    max-width: 900px;
 }
 
 .hero h1 {
-    font-size: clamp(4rem, 10vw, 8rem);
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -4px;
-    margin-bottom: 40px;
+    font-size: clamp(3rem, 12vw, 9rem);
+    line-height: 0.85;
+    margin-bottom: 2rem;
 }
 
 .hero h1 span {
+    display: block;
     color: transparent;
-    -webkit-text-stroke: 1px var(--gold);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
 }
 
-.hero p {
-    font-size: 1.2rem;
-    color: var(--text-dim);
-    max-width: 500px;
-    line-height: 1.6;
-}
-
-/* --- Video Scrub Section --- */
-.section-video {
-    height: 300vh; /* Long scroll for scrubbing */
-    position: relative;
-}
-
-.video-container {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    background: #000;
+/* --- Horizontal Gallery --- */
+.horizontal-scroll-container {
     overflow: hidden;
+    width: 100%;
 }
 
-#zoom-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.6;
-}
-
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.horizontal-scroll-content {
     display: flex;
-    align-items: center;
+    gap: 40px;
+    padding: 20px 0;
+    width: max-content;
 }
 
-.text-block {
-    max-width: 600px;
-}
-
-.text-block h2 {
-    font-size: 4rem;
-    margin-bottom: 24px;
-}
-
-/* --- Gallery --- */
-.section-samples {
-    padding: 150px 0;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    margin-top: 80px;
-}
-
-.sample-card {
+.gallery-card {
+    width: 600px;
+    height: 450px;
     position: relative;
-    border-radius: 12px;
+    border-radius: 20px;
     overflow: hidden;
-    background: #111;
-    border: 1px solid var(--border);
-    transition: transform 0.1s;
+    cursor: pointer;
+    perspective: 1000px;
 }
 
-.sample-card img {
+.gallery-card img, .gallery-card video {
     width: 100%;
-    height: 600px;
+    height: 100%;
     object-fit: cover;
-    opacity: 0.8;
-    transition: opacity 0.5s;
+    transition: transform 0.5s ease;
 }
 
-.sample-card:hover img {
-    opacity: 1;
-}
-
-.card-info {
-    padding: 30px;
-}
-
-.card-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 8px;
-}
-
-.card-info span {
-    color: var(--gold);
-    font-size: 12px;
-    font-weight: 800;
-    text-transform: uppercase;
-}
-
-/* --- CTA --- */
-.cta-section {
-    padding: 200px 0;
-    text-align: center;
-}
-
-.btn-primary {
-    display: inline-block;
-    padding: 20px 48px;
-    background: var(--gold);
-    color: #000;
-    text-decoration: none;
-    font-weight: 900;
-    border-radius: 4px;
-    margin-top: 40px;
-    transition: transform 0.3s;
-}
-
-.btn-primary:hover {
+.gallery-card:hover img, .gallery-card:hover video {
     transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-    .gallery-grid { grid-template-columns: 1fr; }
-    #flashlight-mask { display: none; } /* Disable on mobile for performance */
-    body { cursor: auto; }
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
+
+.gallery-card:hover .card-overlay {
+    opacity: 1;
+}
+
+/* --- Deep Dive (Video Scrub) --- */
+.scrub-section {
+    height: 400vh;
+}
+
+.scrub-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.scrub-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.scrub-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+}
+
+.scrub-text-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 600px;
+    opacity: 0;
+}
+
+/* --- Animations Section --- */
+.animation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.animation-item {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+}
+
+.animation-item video {
+    width: 100%;
+    display: block;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    border: 1px solid var(--accent);
+}
+
+.btn-accent {
+    background: var(--accent);
+    color: #000;
+}
+
+.btn-accent:hover {
+    background: transparent;
+    color: var(--accent);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+/* --- HUD Elements --- */
+.hud-wrapper {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    z-index: 1000;
+}
+
+.hud-item {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+.hud-label {
+    display: block;
+    font-size: 8px;
+    color: var(--accent);
+    margin-bottom: 2px;
+}
+
+.hud-value {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+    .gallery-card { width: 90vw; height: 300px; }
+    .hero h1 { font-size: 4rem; }
+    .animation-grid { grid-template-columns: 1fr; }
+}
+

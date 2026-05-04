@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Ultimate Guide to 4K AI Photo Mosaics | Aameeq Tech Blog</title>
-    <meta name="description" content="Explore the technical depth of AI photo mosaics. An interactive 3D deep-dive into Aameeq's high-resolution rendering and color matching technology.">
+    <title>Photomosaic Masterpieces | The Future of Digital Art</title>
+    <meta name="description" content="Experience the intersection of memory and mathematics. An interactive showcase of high-fidelity AI photomosaics and cinematic animations.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;900&family=Inter:wght@300;400;800&display=swap" rel="stylesheet">
     
     <!-- Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -20,157 +20,187 @@
 </head>
 <body>
 
-    <!-- The Flashlight Mask (Top Layer) -->
-    <div id="flashlight-mask"></div>
-
-    <!-- Technical HUD (Floating UI) -->
-    <div id="tech-hud">
-        <div class="hud-item">
-            <span class="hud-label">STATUS</span>
-            <span class="hud-value" id="hud-status">ANALYZING MEMORIES...</span>
-        </div>
-        <div class="hud-item">
-            <span class="hud-label">DPI</span>
-            <span class="hud-value">300.00</span>
-        </div>
-        <div class="hud-item">
-            <span class="hud-label">RENDER MODE</span>
-            <span class="hud-value">PERCEPTUAL LAB</span>
-        </div>
-    </div>
-
     <!-- Custom Cursor -->
-    <div id="custom-cursor">
-        <div class="cursor-dot"></div>
-        <div class="cursor-text">EXPLORE</div>
+    <div id="custom-cursor"></div>
+
+    <!-- HUD Overlay -->
+    <div class="hud-wrapper">
+        <div class="hud-item glass">
+            <span class="hud-label">ENGINE STATUS</span>
+            <span class="hud-value">OPTIMIZED</span>
+        </div>
+        <div class="hud-item glass">
+            <span class="hud-label">CORE FPS</span>
+            <span class="hud-value" id="fps-counter">60.0</span>
+        </div>
     </div>
 
     <main id="main-content">
-        <!-- Hero: The Fragmented Cloud -->
-        <section class="hero" id="hero">
-            <div id="tile-cloud"></div> <!-- Tiles fly here -->
+        <!-- Hero Section -->
+        <section class="hero">
+            <video class="hero-video-bg" autoplay muted loop playsinline>
+                <source src="assets/masterpiece_gallery/animation_cinematic_reveal.mp4" type="video/mp4">
+            </video>
+            <div class="hero-content">
+                <span class="eyebrow">Aameeq Photomosaic V2.0</span>
+                <h1 class="reveal-up">Digital<br><span>Mastery.</span></h1>
+                <p class="reveal-up" style="color: var(--text-dim); margin: 0 auto 3rem; max-width: 500px;">Transforming thousands of individual pixels into a singular high-fidelity vision. Experience the next generation of AI-driven mosaics.</p>
+                <a href="#masterpieces" class="btn btn-accent reveal-up">Explore Collection</a>
+            </div>
+        </section>
+
+        <!-- Horizontal Collection Section -->
+        <section id="masterpieces" style="padding-bottom: 0;">
+            <div class="container">
+                <span class="eyebrow">The Collection</span>
+                <h2 class="gradient-text" style="font-size: 4rem; margin-bottom: 4rem;">Masterpiece Gallery</h2>
+            </div>
             
-            <div class="container hero-inner">
-                <div class="hero-text">
-                    <span class="eyebrow">Aameeq Technical Whitepaper</span>
-                    <h1>Digital <br><span>Alchemy.</span></h1>
-                    <p><strong>What is a photomosaic?</strong> Often described as a <em>picture composed of many smaller images</em>, a true AI photomosaic is a masterpiece of digital sequencing. Move your cursor to illuminate how 10,000 memories converge into a single, high-resolution masterpiece.</p>
-                    <div class="scroll-indicator">
-                        <span class="mouse"></span>
-                        <span class="text">Scroll to Deep-Dive</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: The Infinite Zoom (Video Scrubbing) -->
-        <section class="section-video" id="video-scrub-section">
-            <div class="video-container">
-                <video id="zoom-video" muted playsinline preload="auto">
-                    <source src="assets/samples/animation_zoom_reveal.mp4" type="video/mp4">
-                </video>
-                <div class="video-overlay">
-                    <div class="container">
-                        <div class="text-block">
-                            <h2 class="reveal-text">Infinite Detail.</h2>
-                            <p class="reveal-text">As you scroll, notice how the AI preserves the identity of every single tile. This isn't just a <strong>mosaic blur</strong> or a filter—it's a chromatic reconstruction. Whether you are using an <strong>iPhone</strong> or a professional camera, creating a <strong>photo mosaic from personal images</strong> is now effortless. Our algorithm acts as the <a href="https://photomosaic.work" style="color: var(--gold); text-decoration: underline;">best website for creating photo mosaics online</a>, ensuring every pixel counts.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: How it Works (Technical Workflow) -->
-        <section class="workflow-section" style="padding: 100px 0; border-top: 1px solid var(--border);">
-            <div class="container">
-                <h2 style="margin-bottom: 60px; text-align: center;">How to Create a Photo Mosaic: The 3-Step AI Workflow</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px;">
-                    <div class="step-card">
-                        <span style="font-size: 3rem; font-weight: 900; color: var(--gold); opacity: 0.3;">01</span>
-                        <h3>Collection</h3>
-                        <p style="color: var(--text-dim);">Upload your personal images. Our <a href="https://photomosaic.work" style="color: var(--text-main);">custom photo mosaic maker</a> supports Windows, Mac, and Mobile via web-access.</p>
-                    </div>
-                    <div class="step-card">
-                        <span style="font-size: 3rem; font-weight: 900; color: var(--gold); opacity: 0.3;">02</span>
-                        <h3>Analysis</h3>
-                        <p style="color: var(--text-dim);">The AI performs a "Perceptual LAB" analysis, matching the hue and saturation of 10,000 tiles to your master portrait.</p>
-                    </div>
-                    <div class="step-card">
-                        <span style="font-size: 3rem; font-weight: 900; color: var(--gold); opacity: 0.3;">03</span>
-                        <h3>Render</h3>
-                        <p style="color: var(--text-dim);">Export a 300 DPI print-ready file. Aameeq is the <a href="https://photomosaic.work" style="color: var(--text-main);">top-rated photo mosaic software</a> for high-fidelity results.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: The Authority Samples -->
-        <section class="section-samples" id="gallery">
-            <div class="container">
-                <div class="gallery-header">
-                    <h2>The Masterpiece Gallery</h2>
-                    <p>Technical benchmarks for high-fidelity printing. A top-rated <strong>mosaic maker</strong> for professional artists and corporate murals.</p>
-                </div>
-                
-                <div class="gallery-grid">
-                    <div class="sample-card" data-tilt>
-                        <img src="assets/samples/mosaic_high_fidelity.jpg" alt="High Fidelity Mosaic">
-                        <div class="card-info">
+            <div class="horizontal-scroll-container">
+                <div class="horizontal-scroll-content">
+                    <!-- Masterpiece 1 -->
+                    <div class="gallery-card glass" data-title="High Fidelity" data-desc="300 DPI Ultra-HD Rendering">
+                        <img src="assets/masterpiece_gallery/mosaic_high_fidelity.jpg" alt="High Fidelity">
+                        <div class="card-overlay">
                             <h3>High Fidelity</h3>
-                            <span>300 DPI Export</span>
-                            <p style="font-size: 0.8rem; margin-top: 10px; color: var(--text-dim);">Why are mosaics so expensive? Precision. Every pixel is calculated to match your master portrait perfectly.</p>
+                            <p>Precision matched color nodes.</p>
                         </div>
                     </div>
-                    <div class="sample-card" data-tilt>
-                        <img src="assets/samples/mosaic_masterpiece_balanced.jpg" alt="Balanced Masterpiece">
-                        <div class="card-info">
+                    <!-- Masterpiece 2 -->
+                    <div class="gallery-card glass" data-title="Balanced Logic" data-desc="Perceptual LAB Color Space">
+                        <img src="assets/masterpiece_gallery/mosaic_masterpiece_balanced.jpg" alt="Balanced Masterpiece">
+                        <div class="card-overlay">
                             <h3>Balanced Logic</h3>
-                            <span>LAB Color Space</span>
-                            <p style="font-size: 0.8rem; margin-top: 10px; color: var(--text-dim);">How much does a photo mosaic cost? Aameeq offers affordable premium rendering starting at $10.</p>
+                            <p>Perfectly weighted tile distribution.</p>
+                        </div>
+                    </div>
+                    <!-- Masterpiece 3 -->
+                    <div class="gallery-card glass" data-title="Distributed" data-desc="Geometric Tile Alignment">
+                        <img src="assets/masterpiece_gallery/mosaic_masterpiece_distributed.jpg" alt="Distributed Masterpiece">
+                        <div class="card-overlay">
+                            <h3>Distributed</h3>
+                            <p>Seamless transition between memories.</p>
+                        </div>
+                    </div>
+                    <!-- Masterpiece 4 -->
+                    <div class="gallery-card glass" data-title="True Mosaic" data-desc="Native Resolution Composite">
+                        <img src="assets/masterpiece_gallery/mosaic_true_mosaic.jpg" alt="True Mosaic">
+                        <div class="card-overlay">
+                            <h3>True Mosaic</h3>
+                            <p>Uncompromised clarity at every level.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ: Addressing Top Search Intent -->
-        <section class="faq-section" style="padding: 100px 0; background: #0c0c0c; border-top: 1px solid var(--border);">
+        <!-- Video Scrub Section (Deep Dive) -->
+        <section class="scrub-section">
+            <div class="scrub-sticky">
+                <video class="scrub-video" id="scrub-video" muted playsinline preload="auto">
+                    <source src="assets/masterpiece_gallery/animation_zoom_reveal.mp4" type="video/mp4">
+                </video>
+                <div class="scrub-content">
+                    <div class="scrub-text-block" id="scrub-text-1">
+                        <h2 style="font-size: 5rem;">Infinite Scale.</h2>
+                        <p>Scroll to reveal the microscopic precision of 10,000 unique tiles.</p>
+                    </div>
+                    <div class="scrub-text-block" id="scrub-text-2">
+                        <h2 style="font-size: 5rem;">Zero Artifacts.</h2>
+                        <p>Our AI maintains perfect color fidelity without the need for filters.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Animation Showcase Section -->
+        <section class="animation-showcase">
             <div class="container">
-                <h2 style="margin-bottom: 40px; color: var(--gold);">The Authoritative Photomosaic FAQ</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
+                <span class="eyebrow">Motion Engineering</span>
+                <h2 style="font-size: 4rem; margin-bottom: 4rem;">The Dynamics of Detail</h2>
+                
+                <div class="animation-grid">
+                    <div class="animation-item glass">
+                        <video autoplay muted loop playsinline>
+                            <source src="assets/masterpiece_gallery/animation_fly_in.mp4" type="video/mp4">
+                        </video>
+                        <div style="padding: 20px;">
+                            <h4>Kinetic Assembly</h4>
+                            <p style="color: var(--text-dim); font-size: 0.9rem;">Tiles dynamically converge to form the master vision.</p>
+                        </div>
+                    </div>
+                    <div class="animation-item glass">
+                        <video autoplay muted loop playsinline>
+                            <source src="assets/masterpiece_gallery/animation_scatter_gather.mp4" type="video/mp4">
+                        </video>
+                        <div style="padding: 20px;">
+                            <h4>Entropy Control</h4>
+                            <p style="color: var(--text-dim); font-size: 0.9rem;">Visualizing the transition from chaos to composition.</p>
+                        </div>
+                    </div>
+                    <div class="animation-item glass">
+                        <video autoplay muted loop playsinline>
+                            <source src="assets/masterpiece_gallery/animation_wave_ripple.mp4" type="video/mp4">
+                        </video>
+                        <div style="padding: 20px;">
+                            <h4>Wave Propagation</h4>
+                            <p style="color: var(--text-dim); font-size: 0.9rem;">Fluid transitions based on image frequency and hue.</p>
+                        </div>
+                    </div>
+                    <div class="animation-item glass">
+                        <video autoplay muted loop playsinline>
+                            <source src="assets/masterpiece_gallery/animation_spiral_reveal.mp4" type="video/mp4">
+                        </video>
+                        <div style="padding: 20px;">
+                            <h4>Recursive Reveal</h4>
+                            <p style="color: var(--text-dim); font-size: 0.9rem;">Mathematical beauty in every tile placement.</p>
+                        </div>
+                    </div>
+                    <div class="animation-item glass">
+                        <video autoplay muted loop playsinline>
+                            <source src="assets/masterpiece_gallery/animation_tile_spotlight.mp4" type="video/mp4">
+                        </video>
+                        <div style="padding: 20px;">
+                            <h4>Focus Logic</h4>
+                            <p style="color: var(--text-dim); font-size: 0.9rem;">Highlighting individual memories within the grand design.</p>
+                        </div>
+                    </div>
+                    <div class="animation-item glass">
+                        <video autoplay muted loop playsinline>
+                            <source src="assets/masterpiece_gallery/animation_shuffle.mp4" type="video/mp4">
+                        </video>
+                        <div style="padding: 20px;">
+                            <h4>Real-time Evolution</h4>
+                            <p style="color: var(--text-dim); font-size: 0.9rem;">Observing the algorithm's iterative optimization process.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical FAQ -->
+        <section class="faq" style="background: #080808;">
+            <div class="container">
+                <h2 class="gradient-text" style="font-size: 3rem; margin-bottom: 4rem;">Technical Documentation</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px;">
                     <div>
-                        <h3 style="font-size: 1.1rem; margin-bottom: 10px;">What is a synonym for photomosaic?</h3>
-                        <p style="color: var(--text-dim); font-size: 0.9rem;">Commonly known as a <strong>picture mosaic</strong>, photographic tiling, or an <strong>image-composition mural</strong>. It is a single large image composed of many smaller images.</p>
+                        <h3 style="margin-bottom: 1rem;">Chromatic Fidelity</h3>
+                        <p style="color: var(--text-dim);">How does Aameeq achieve such realistic colors? We use <strong>Perceptual LAB</strong> color matching, which simulates human vision to find the perfect tile for every pixel.</p>
                     </div>
                     <div>
-                        <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Where can I order custom photo mosaic prints in the US?</h3>
-                        <p style="color: var(--text-dim); font-size: 0.9rem;">Aameeq exports print-ready 4K files. For physical prints, we recommend shipping your high-res export to US-based labs like Mpix or Nations Photo Lab for <a href="https://photomosaic.work" style="color: var(--text-main);">custom photo mosaic prints</a>.</p>
-                    </div>
-                    <div>
-                        <h3 style="font-size: 1.1rem; margin-bottom: 10px;">How much does it cost to print 1,000 photos?</h3>
-                        <p style="color: var(--text-dim); font-size: 0.9rem;">Printing 1,000 individual 4x6 photos can cost over $200. A photo mosaic allows you to showcase all 1,000 memories in a single large-format print for as little as $15-$30, saving you hundreds in framing and space.</p>
-                    </div>
-                    <div>
-                        <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Is there free software to create photo mosaics?</h3>
-                        <p style="color: var(--text-dim); font-size: 0.9rem;">While there are "free" tools online, they often watermark your images or lack the resolution for printing. Aameeq provides an <a href="https://photomosaic.work" style="color: var(--text-main);">affordable AI photo mosaic service</a> that delivers professional-grade results.</p>
-                    </div>
-                    <div>
-                        <h3 style="font-size: 1.1rem; margin-bottom: 10px;">How much to charge for mosaic art?</h3>
-                        <p style="color: var(--text-dim); font-size: 0.9rem;">Professional digital artists often charge $150-$500 for a single custom mosaic. Aameeq's AI automation allows you to get the same <a href="https://photomosaic.work" style="color: var(--text-main);">personalized photo mosaic</a> for under $10.</p>
-                    </div>
-                    <div>
-                        <h3 style="font-size: 1.1rem; margin-bottom: 10px;">How do I add mosaic blur to a photo on iPhone?</h3>
-                        <p style="color: var(--text-dim); font-size: 0.9rem;">Adding a "blur" is simple via the iPhone Markup tool, but creating a <strong>true photo mosaic</strong> requires an AI engine that matches personal images by color—something Aameeq's mobile-optimized web app handles perfectly.</p>
+                        <h3 style="margin-bottom: 1rem;">Global Performance</h3>
+                        <p style="color: var(--text-dim);">Our engine is optimized for speed. Whether you are in the <strong>US</strong> or Europe, generating a <strong>high-resolution photo mosaic</strong> takes seconds, not hours.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Final Call to Action -->
-        <section class="cta-section">
+        <section class="cta" style="text-align: center; padding: 200px 0;">
             <div class="container">
-                <h2>Ready to animate your memories?</h2>
-                <a href="https://photomosaic.work" class="btn-primary">Launch AI Generator</a>
+                <h2 style="font-size: 4rem; margin-bottom: 2rem;">Ready to Build Yours?</h2>
+                <p style="color: var(--text-dim); margin-bottom: 3rem;">Join thousands of creators using the world's most advanced mosaic maker.</p>
+                <a href="https://photomosaic.work" class="btn btn-accent">Create Your Mosaic Now</a>
             </div>
         </section>
     </main>
