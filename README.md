@@ -1,73 +1,23 @@
-# React + TypeScript + Vite
+# Photomosaic AI - Technical Blog & Case Study
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a high-authority "satellite" repository for the [Aameeq Photomosaic](https://photomosaic.work) platform. It serves as a technical deep-dive into AI-driven chromatic reconstruction and high-fidelity mosaic rendering.
 
-Currently, two official plugins are available:
+## Live Demo
+This repository is configured for GitHub Pages. 
+View the live blog here: **[https://aameeq.github.io/Photomosaic/](https://aameeq.github.io/Photomosaic/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- **3D Interactive Exploration**: Move your cursor to illuminate the converging memories.
+- **Video Scrubbing**: Scroll-controlled zoom reveal of 4K mosaic details.
+- **Technical HUD**: Real-time status indicators for rendering and analysis modes.
+- **SEO Optimized**: Strategic back-linking and semantic HTML for maximum reach.
 
-## React Compiler
+## GitHub Pages Setup
+To ensure the site remains live:
+1. Go to **Settings** > **Pages** in this repository.
+2. Under **Build and deployment** > **Source**, select `Deploy from a branch`.
+3. Select the `main` branch and the `/ (root)` folder.
+4. Click **Save**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+*Powered by [Aameeq](https://photomosaic.work)*
