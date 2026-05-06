@@ -84,7 +84,7 @@ export default function Explorations() {
                   role="img"
                   aria-label={`Community Mosaic Masterpiece ${item}`}
                   className="w-full h-full bg-surface rounded-2xl overflow-hidden relative group bg-cover bg-center"
-                  style={{ backgroundImage: `url(assets/media/mosaic-${item}.jpg)` }}
+                  style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/media/mosaic-${item}.jpg)` }}
                 >
                   <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
@@ -100,7 +100,7 @@ export default function Explorations() {
                   role="img"
                   aria-label={`Community Mosaic Masterpiece ${item}`}
                   className="w-full h-full bg-surface rounded-2xl overflow-hidden relative group bg-cover bg-center"
-                  style={{ backgroundImage: `url(assets/media/mosaic-${item}.jpg)` }}
+                  style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/media/mosaic-${item}.jpg)` }}
                 >
                   <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>

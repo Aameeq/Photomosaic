@@ -52,7 +52,7 @@ export default function SelectedWorks() {
                 role="img"
                 aria-label={`${project.title} - Photomosaic AI demonstration. High-resolution output at 300 DPI, print-ready for billboards and posters.`}
                 className="absolute inset-0 bg-surface transition-transform duration-700 ease-out group-hover:scale-105 bg-cover bg-center"
-                style={{ backgroundImage: `url(assets/media/mosaic-${project.img}.jpg)` }}
+                style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/media/mosaic-${project.img}.jpg)` }}
                 title={`${project.title} - Professional Photomosaic Result`}
               />
               

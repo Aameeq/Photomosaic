@@ -81,7 +81,7 @@ export default function Journal() {
                           delay: num * 0.2
                         }}
                         style={{ 
-                          backgroundImage: `url(assets/media/mosaic-${num + 5}.jpg)`,
+                          backgroundImage: `url(${import.meta.env.BASE_URL}assets/media/mosaic-${num + 5}.jpg)`,
                           boxShadow: '0 0 10px rgba(0,0,0,0.3)'
                         }}
                       />

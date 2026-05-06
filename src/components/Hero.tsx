@@ -42,7 +42,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <video 
           ref={videoRef}
-          src="assets/media/hero-bg.mp4"
+          src={`${import.meta.env.BASE_URL}assets/media/hero-bg.mp4`}
           autoPlay 
           muted 
           loop 
