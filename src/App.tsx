@@ -8,7 +8,7 @@ import FreePhotoMosaicSoftware from './content/free-photo-mosaic-software.mdx';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Photomosaic">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog/what-is-photo-mosaic" element={<BlogPost><WhatIsPhotoMosaic /></BlogPost>} />
