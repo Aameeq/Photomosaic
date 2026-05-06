@@ -24,7 +24,7 @@ export default function Footer() {
       <div className="absolute inset-0 z-0 opacity-50 pointer-events-none">
         <video 
           ref={videoRef}
-          src="/assets/media/footer-bg.mp4"
+          src="assets/media/footer-bg.mp4"
           autoPlay 
           muted 
           loop 
