@@ -1,10 +1,14 @@
 import InteractiveMosaicDemo from '../components/mdx/InteractiveMosaicDemo';
+import ZoomImage from '../components/common/ZoomImage';
 
 # The Ultimate Guide: What is a Photo Mosaic and How to Create One
 
 A photo mosaic is a large image composed of hundreds or thousands of smaller, distinct images. When viewed from a distance, the larger image is visible. When viewed up close, the individual constituent photos can be seen.
 
-![Primary Showcase Mosaic](/Photomosaic/assets/media/primary_showcase.jpg)
+<ZoomImage 
+  src="/Photomosaic/assets/media/primary_showcase.jpg" 
+  alt="High resolution photo mosaic sample" 
+/>
 
 <InteractiveMosaicDemo />
 
@@ -14,7 +18,7 @@ Using [Photomosaic's photo mosaic generator](https://photomosaic.work), creating
 
 ### Watch the Process
 
-<video controls width="100%" className="rounded-xl border border-stroke my-8">
+<video autoPlay muted loop playsInline controls width="100%" className="rounded-xl border border-white/10 my-8 shadow-2xl">
   <source src="/Photomosaic/assets/media/motion_showcase.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>

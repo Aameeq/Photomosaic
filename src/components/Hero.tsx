@@ -42,13 +42,12 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <video 
           ref={videoRef}
-          src={`${import.meta.env.BASE_URL}assets/media/hero-bg.mp4`}
+          src={`${import.meta.env.BASE_URL}assets/media/motion_showcase.mp4`}
           autoPlay 
           muted 
           loop 
           playsInline 
           title="Photomosaic AI Photo Mosaic Background Video"
-          aria-label="Cinematic background animation showing a professional photomosaic being assembled from thousands of tiny photos"
           className="absolute top-1/2 left-1/2 min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2"
         />
         <div className="absolute inset-0 bg-black/20" />

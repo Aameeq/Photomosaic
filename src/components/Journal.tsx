@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const journals = [
   { title: "What is a Photo Mosaic?", time: "5 min read", date: "Oct 12", link: "/blog/what-is-photo-mosaic" },
@@ -43,8 +44,8 @@ export default function Journal() {
         {/* Entries */}
         <div className="flex flex-col gap-4">
           {journals.map((entry, i) => (
-            <a 
-              href={entry.link}
+            <Link 
+              to={entry.link}
               key={i}
               className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 p-6 sm:p-4 bg-surface/30 hover:bg-surface border border-stroke rounded-[40px] sm:rounded-full cursor-pointer transition-colors duration-300"
             >
@@ -101,7 +102,7 @@ export default function Journal() {
                   <span className="text-lg">↗</span>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 

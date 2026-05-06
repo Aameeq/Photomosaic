@@ -24,13 +24,12 @@ export default function Footer() {
       <div className="absolute inset-0 z-0 opacity-50 pointer-events-none">
         <video 
           ref={videoRef}
-          src={`${import.meta.env.BASE_URL}assets/media/footer-bg.mp4`}
+          src={`${import.meta.env.BASE_URL}assets/media/motion_secondary.mp4`}
           autoPlay 
           muted 
           loop 
           playsInline 
           title="Photomosaic Background Video"
-          aria-label="High-resolution photomosaic animation background"
           className="absolute top-1/2 left-1/2 min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2 scale-y-[-1]"
         />
         <div className="absolute inset-0 bg-black/60" />
