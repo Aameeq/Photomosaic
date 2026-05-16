@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const journals = [
+  { title: "Wedding Mosaic Blueprint", time: "6 min read", date: "Apr 21", link: "/blog/wedding-photo-mosaic-blueprint" },
+  { title: "The Gold Standard: Mosaic Quality", time: "8 min read", date: "Apr 20", link: "/blog/the-gold-standard-mosaic-quality" },
   { title: "What is a Photo Mosaic?", time: "5 min read", date: "Oct 12", link: "/blog/what-is-photo-mosaic" },
   { title: "Top iPhone Mosaic Apps", time: "4 min read", date: "Sep 28", link: "/blog/iphone-mosaic-app" },
   { title: "Photo Mosaic Software Cost", time: "7 min read", date: "Sep 15", link: "/blog/photo-mosaic-cost" },
